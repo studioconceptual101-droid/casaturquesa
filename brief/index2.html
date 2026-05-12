@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Turquesa</title>
+
+    <!-- Enlace al favicon en formato PNG -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!--Google fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400&display=swap" rel="stylesheet">
+
+    <!-- Comandos css fuentes -->
+
+    <!--
+	font-family: 'Cinzel', serif;
+	font-family: 'Nunito', sans-serif;
+    -->
+
+    <!-- Enlace al archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Opcional: Enlace a un tema de Bootstrap (opcional) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
+
+    <!-- Opcional: Enlace al archivo CSS personalizado -->
+    <!-- <link rel="stylesheet" href="ruta-a-tu-archivo.css"> -->
+
+    <link rel="stylesheet" href="syles.css">
+</head>
+<style>
+body {
+	background-image: url('images/background_1.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.contenido{
+	background-color: #ffffff9e;
+}
+
+h1, h2, h3{font-family: 'Cinzel', serif;}
+
+.header{
+/*	background-color: #ccc;*/
+}
+.container.header-princial {
+    padding: 50px 0 50px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.logo-home{
+	width: 300px;
+	height: auto;
+	overflow: hidden;
+	transition: transform 0.3s;
+}
+
+.logo-home:hover{
+	transform: scale(1.2);
+}
+
+.social-icons {
+	font-size: 0; /* Para eliminar el espacio entre elementos inline-block */
+	text-align: center;
+	padding: 10px 0 10px 0;
+}
+
+.social-icons img {
+	width: 35px; /* Ajusta el tamaño de los iconos según sea necesario */
+	height: 35px;
+	margin-right: 10px; /* Espacio entre los iconos */
+	overflow: hidden;
+	transition: transform 0.3s;
+}
+
+.social-icons img:hover{
+	transform: scale(1.2);	
+}
+
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+/* Estilos para la versión responsive */
+@media screen and (max-width: 600px) {
+	.navbar {
+		flex-direction: column;
+		align-items: center;
+	}
+
+            .navbar a:not(:first-child) {display: none;}
+            .navbar a.icon {display: block;position: absolute;top: 0;right: 0;}
+            .navbar.responsive a.icon {position: relative;}
+            .navbar.responsive a {float: none; display: block; text-align: left;}
+}
+
+</style>
+
+<body>
+<section class="header"><!--head-->
+	<div class="container header-princial">
+
+		<div class="logo">
+			<a href="#">
+				<img src="images/logo-casaturquesa-white-400X300.png" class="logo-home" alt="">
+			</a>
+		</div>
+
+	</div>
+</section>
+<section class="contenido"><!--contenido-->
+
+	<div class="container">
+		<h1>Ejemplo de Bootstrap</h1>
+		<p>Este es un ejemplo básico de cómo usar Bootstrap en tu HTML.</p>
+		<button class="btn btn-primary">Botón de Bootstrap</button>
+
+		<br>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores magni est commodi obcaecati repellendus rerum, dolorem ipsa eius necessitatibus officiis assumenda blanditiis voluptas eveniet odit? Assumenda eveniet, officia ut nam! Lorem ipsum dolor, sit amet, consectetur adipisicing elit. Rem reprehenderit corrupti aperiam totam repellat ducimus fugit corporis impedit doloribus dolorum odio similique provident, voluptatem distinctio inventore omnis autem ea neque.</p>
+	</div>
+	
+</section>
+
+<section> <!--menu inicio-->
+
+<div class="container">
+    <!-- Menú de navegación -->
+    <div class="navbar" id="myNavbar">
+        <a href="#" class="active">Inicio</a>
+        <a href="#">Acerca de</a>
+        <a href="#">Aceite de oliva</a>
+        <a href="#">Sal rosada de maras</a>
+        <a href="#">Contacto</a>
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+    </div>
+</div>
+	
+</section>
+
+<section><!--redes-->
+
+	<!-- Contenido de tu página -->
+	<div class="social-icons">
+		<a href="#"><img src="icons/icon_facebook-w.png" alt="Facebook"></a>
+		<a href="#"><img src="icons/icon_twitter-w.png" alt="Twitter"></a>
+		<a href="#"><img src="icons/icon_instagram-w.png" alt="Instagram"></a>
+		<a href="#"><img src="icons/icon_whatsapp-w.png" alt="Whatsapp"></a>
+		<a href="#"><img src="icons/icon_email-w.png" alt="Email"></a>
+	<!-- Agrega más iconos aquí -->
+	</div>
+
+	<script>
+        function toggleMenu() {
+            var navbar = document.getElementById("myNavbar");
+            if (navbar.className === "navbar") {
+                navbar.className += " responsive";
+            } else {
+                navbar.className = "navbar";
+            }
+        }
+	</script>
+
+</section>
+
+<style>
+.main-content {
+	flex: 1;
+	padding: 20px;
+}
+
+/* Estilo para el footer */
+	footer {
+		background-color: #1254639c;
+		background-blend-mode: multiply;
+		color: white;
+		text-align: center;
+		padding: 10px;
+		font-family: 'Nunito', sans-serif;
+		font-size: 10px;
+	}
+.seccion-footer {
+    margin-top: auto;
+}
+
+</style>
+
+<section class="seccion-footer"><!--footer-->
+        <footer>
+            <!-- Contenido del footer, como enlaces, información de contacto, etc. -->
+            <p>Derechos de autor &copy; 2023 Mi Empresa. Todos los derechos reservados.</p>
+        </footer>
+</section>
+
+    <!-- Enlace a la biblioteca de JavaScript de Bootstrap (requiere jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Opcional: Agregar tus propios scripts personalizados -->
+    <!-- <script src="ruta-a-tu-script.js"></script> -->
+</body>
+</html>

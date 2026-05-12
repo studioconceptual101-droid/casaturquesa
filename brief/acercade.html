@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Horizontal Centrado y Vertical en Responsive</title>
+
+    <!-- Enlace al favicon en formato PNG -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400&display=swap" rel="stylesheet">
+
+    <!-- Comandos css fuentes -->
+
+    <!--
+    font-family: 'Cinzel', serif;
+    font-family: 'Nunito', sans-serif;
+    -->
+
+    <!-- Enlace al archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Opcional: Enlace a un tema de Bootstrap (opcional) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
+
+    <!-- Opcional: Enlace al archivo CSS personalizado -->
+    <!-- <link rel="stylesheet" href="ruta-a-tu-archivo.css"> -->
+
+    <link rel="stylesheet" href="syles.css">
+
+ 
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background-image: url('images/background_2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.logo-container{
+    text-align: center;
+    margin: auto;
+    display: block;
+    margin-top: 50px;
+}
+
+.logo-home2{
+    width: 150px;
+    height: auto;
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.logo-home2:hover{
+    transform: scale(1.1);
+}
+
+.navbar.m-desktop {
+    /*background-color: #333;*/
+    font-family: 'Cinzel', serif;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Agrega wrap para manejar elementos en múltiples líneas */
+    font-size: 15px;
+    line-height: 14px;
+    font-weight: 500;
+}
+
+.navbar.m-desktop a {
+    color: #399FB6;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    flex: 1; /* Distribuye igualmente el espacio disponible */
+    /*max-width: 180px;  Limita el ancho máximo para evitar que los elementos sean muy amplios */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho máximo */
+}
+
+.navbar.m-desktop a:hover {
+    background-color: #399FB6;
+    color: #fff;
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+
+/*menu principal horizontal*/
+.container.menu-contenido{
+    max-width: 1200px;
+}
+
+.contenido-1{
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    color: #7a7a7a;
+}
+
+.container.contenedor-parrafos{
+    max-width: 900px;
+    margin: auto;
+    padding: 20px 100px 20px 100px;
+}
+
+.texto-parrafos {
+    text-align: justify;
+    line-height: 20px;
+    font-weight: 300;
+}
+
+h1, h2, h3{font-family: 'Cinzel', serif;}
+ 
+ #topButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #399FB6;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+#topButton:hover {
+    background-color: #47C6E3;
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+
+@media (max-width: 500px){
+    .container.contenedor-parrafos{
+        margin: auto;
+        padding: 20px 40px 20px 40px;
+    }
+
+    .navbar.m-desktop{
+        display: none;
+    }
+
+    h2.titulo-principal{text-align: center;}
+
+    body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background-image: url('images/background_16_9.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos para la orientación vertical */
+@media (orientation: portrait) {
+  /* Aquí puedes aplicar estilos específicos para cuando el dispositivo está en modo vertical */
+  nav {
+    display: block; /* Muestra el menú de navegación */
+  }
+}
+
+/* Estilos para la orientación horizontal */
+@media (max-width: 500px) and (orientation: landscape) {
+  /* Aquí puedes aplicar estilos específicos para cuando el dispositivo está en modo horizontal */
+  .navbar.m-desktop {
+    display: none; /* Oculta el menú de navegación */
+  }
+  .container.menu-contenido {display: none;}
+}
+/*-------------------------------------------------*/
+
+
+
+
+</style>
+
+</head>
+<body>
+<section class="logo-container">
+
+    <div class="logo2">
+            <a href="index.html">
+                <img src="images/logo-casaturquesa-400X300px.svg" class="logo-home2" alt="">
+            </a>
+        </div>
+    
+</section>
+
+<section>
+    <div class="container menu-contenido">
+
+    <!-- Menú de navegación -->
+    <div class="navbar m-desktop">
+        <a href="index.html">Inicio</a>
+        <a href="#">Acerca de</a>
+        <a href="#">Productos</a>
+        <a href="#">Aceite de Oliva</a>
+        <a href="#">Sal rosada de maras</a>
+        <a href="#">Contacto</a>
+    </div>
+</div>
+</section>
+
+<!--contenido-->
+
+<section class="contenido-1">
+    <div class="container contenedor-parrafos">
+        <h2 class="titulo-principal">Titulo</h2>
+        <p class="texto-parrafos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, consequuntur, ipsum nulla minima non voluptates. Quam adipisci doloremque laborum, voluptatem qui ipsa voluptatum accusantium expedita, ratione tempore vero quibusdam ex! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi odit illo, harum, impedit molestiae labore ullam saepe dolore magni mollitia aliquid ea a commodi voluptatum. Impedit architecto repellendus, dolor debitis.</p>
+
+        <p class="texto-parrafos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, consequuntur, ipsum nulla minima non voluptates. Quam adipisci doloremque laborum, voluptatem qui ipsa voluptatum accusantium expedita, ratione tempore vero quibusdam ex! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi odit illo, harum, impedit molestiae labore ullam saepe dolore magni mollitia aliquid ea a commodi voluptatum. Impedit architecto repellendus, dolor debitis.</p>
+
+        <p class="texto-parrafos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, consequuntur, ipsum nulla minima non voluptates. Quam adipisci doloremque laborum, voluptatem qui ipsa voluptatum accusantium expedita, ratione tempore vero quibusdam ex! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi odit illo, harum, impedit molestiae labore ullam saepe dolore magni mollitia aliquid ea a commodi voluptatum. Impedit architecto repellendus, dolor debitis.</p>
+
+        <p class="texto-parrafos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, consequuntur, ipsum nulla minima non voluptates. Quam adipisci doloremque laborum, voluptatem qui ipsa voluptatum accusantium expedita, ratione tempore vero quibusdam ex! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi odit illo, harum, impedit molestiae labore ullam saepe dolore magni mollitia aliquid ea a commodi voluptatum. Impedit architecto repellendus, dolor debitis.</p>
+
+        <p class="texto-parrafos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, consequuntur, ipsum nulla minima non voluptates. Quam adipisci doloremque laborum, voluptatem qui ipsa voluptatum accusantium expedita, ratione tempore vero quibusdam ex! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi odit illo, harum, impedit molestiae labore ullam saepe dolore magni mollitia aliquid ea a commodi voluptatum. Impedit architecto repellendus, dolor debitis.</p>
+
+    </div>
+</section>
+
+<!--seccion footer-->
+<style>
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Estilo para el footer */
+    footer {
+/*        background-color: #1254639c;
+        background-blend-mode: multiply;*/
+        color: #399FB6;
+        text-align: center;
+        padding: 10px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 10px;
+    }
+.seccion-footer {
+    margin-top: auto;
+}
+
+.social-icons2 {
+    font-size: 0; /* Para eliminar el espacio entre elementos inline-block */
+    text-align: center;
+    padding: 2% 0 10px 0;
+}
+
+.social-icons2 img {
+    width: 35px; /* Ajusta el tamaño de los iconos según sea necesario */
+    height: 35px;
+    margin-right: 10px; /* Espacio entre los iconos */
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.social-icons2 img:hover{
+    transform: scale(1.2);  
+}
+</style>
+
+
+<section class="seccion-footer">
+
+<!--redes-->
+
+<!-- Contenido de tu página -->
+<div class="social-icons2">
+    <a href="#"><img src="icons/icon_facebook.svg" alt="Facebook"></a>
+    <a href="#"><img src="icons/icon_twitter.svg" alt="Twitter"></a>
+    <a href="#"><img src="icons/icon_instagram.svg" alt="Instagram"></a>
+    <a href="#"><img src="icons/icon_whatsapp.svg" alt="Whatsapp"></a>
+    <a href="#"><img src="icons/icon_email.svg" alt="Email"></a>
+<!-- Agrega más iconos aquí -->
+</div>
+
+
+<!--footer-->
+    <button onclick="goToTop()" id="topButton" title="Ir al Top">Ir Arriba</button>
+
+    <footer>
+        <!-- Contenido del footer, como enlaces, información de contacto, etc. -->
+        <p>Copyright &copy; 2023 Casa Turquesa | Todos los derechos reservados</p>
+    </footer>
+
+<script>
+    // Mostrar u ocultar el botón según la posición de desplazamiento
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("topButton").style.display = "block";
+        } else {
+            document.getElementById("topButton").style.display = "none";
+        }
+    }
+
+    // Función para desplazarse hacia arriba
+    function goToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+
+</section>
+
+
+
+</body>
+</html>
+
+<!-- Enlace a la biblioteca de JavaScript de Bootstrap (requiere jQuery) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+<!-- Opcional: Agregar tus propios scripts personalizados -->
+<!-- <script src="ruta-a-tu-script.js"></script> -->
+
+</body>
+</html>

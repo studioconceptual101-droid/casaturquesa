@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Casa Turquesa</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
+	<script src="https://kit.fontawesome.com/1958077107.js" crossorigin="anonymous"></script>
+	<style>
+		*{margin:0;box-sizing:border-box}
+		body{font-family:'Nunito',sans-serif;margin:0;background-image:url('images/background_3.jpg');background-size:cover;background-attachment:fixed;display:flex;flex-direction:column;min-height:100vh;padding:40px 0 0}
+		h1,h2,h3{font-family:'Cinzel',serif}
+		.head-principal{padding:10px 0}
+		.container.principal{width:100%;margin:auto;text-align:center}
+		.logo-home{width:300px;height:auto;overflow:hidden;transition:transform 0.3s;margin:auto;display:block}
+		.logo-home:hover{transform:scale(1.1)}
+		.menu-ppal{margin-top:15%}
+		.social-icons{font-size:0;text-align:center;padding:5% 0 10px 0}
+		.social-icons img{width:35px;height:35px;margin-right:10px;overflow:hidden;transition:transform 0.3s}
+		.social-icons img:hover{transform:scale(1.2)}
+		.pie-de-pag{margin-top:auto}
+		
+		.header{height:80px;position:fixed;width:100%;top:0;left:0;margin-top:15%;z-index:1000}
+		.nav{display:flex;justify-content:center;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+		.nav-toggle{color:#fff;background:rgba(255,255,255,0.1);border:none;font-size:22px;width:50px;height:50px;border-radius:50%;cursor:pointer;display:none;transition:all 0.3s ease}
+		.nav-menu{display:flex;margin:0;padding:0;list-style:none;gap:8px}
+		.nav-menu-item{font-size:16px;text-transform:uppercase}
+		.nav-menu-link{display:block;padding:8px 16px;border-radius:30px;text-align:center;transition:all 0.3s ease;color:#fff;text-decoration:none;font-family:'Cinzel',serif}
+		.nav-menu-link:hover{background:rgba(255,255,255,0.15);color:#fff;transform:translateY(-2px)}
+		
+		.nav-toggle{color:#fff;background:rgba(255,255,255,0.1);border:none;font-size:22px;width:50px;height:50px;border-radius:50%;cursor:pointer;display:none;transition:all 0.3s ease}
+		.nav-toggle:hover{background:rgba(255,255,255,0.2);transform:scale(1.05)}
+		
+		.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:all 0.3s ease;z-index:998}
+		.menu-overlay.active{opacity:1;visibility:visible}
+		
+		@media(max-width:768px){
+			body{padding-top:80px}
+			.header{height:70px;margin-top:0;background:linear-gradient(135deg,rgba(57,159,182,0.95),rgba(71,198,227,0.9));backdrop-filter:blur(10px)}
+			.nav-toggle{display:flex;align-items:center;justify-content:center}
+			
+			.nav-menu{
+				position:fixed;top:0;right:-280px;width:280px;height:100vh;
+				background:linear-gradient(180deg,#1a1a2e 0%,#16213e 100%);
+				flex-direction:column;align-items:center;justify-content:center;gap:10px;
+				transition:all 0.4s cubic-bezier(0.25,0.8,0.25,1);
+				z-index:999;margin:0;padding:0;box-shadow:-10px 0 30px rgba(0,0,0,0.3)
+			}
+			.nav-menu.active{right:0}
+			
+			.nav-menu-item{opacity:0;transform:translateX(50px)}
+			.nav-menu.active .nav-menu-item{opacity:1;transform:translateX(0);transition:all 0.4s ease}
+			.nav-menu.active li:nth-child(1){transition-delay:0.1s}
+			.nav-menu.active li:nth-child(2){transition-delay:0.15s}
+			.nav-menu.active li:nth-child(3){transition-delay:0.2s}
+			.nav-menu.active li:nth-child(4){transition-delay:0.25s}
+			.nav-menu.active li:nth-child(5){transition-delay:0.3s}
+			
+			.nav-menu-link{padding:15px 40px;font-size:18px;color:#fff;width:100%}
+			.nav-menu-link:hover{background:rgba(255,255,255,0.1);transform:scale(1.05)}
+			
+			.nav-toggle{position:fixed;top:10px;right:15px;z-index:1001}
+			
+			.nav-toggle .fa-bars{transition:all 0.3s ease}
+			.nav-toggle.active .fa-bars{transform:rotate(90deg);opacity:0}
+			.nav-toggle .fa-times{position:absolute;opacity:0;transition:all 0.3s ease}
+			.nav-toggle.active .fa-times{opacity:1;transform:rotate(90deg)}
+		}
+	</style>
+</head>
+<body>
+	<section class="head-principal">
+		<div class="container principal">
+			<div class="logo">
+				<a href="index.html">
+					<img src="images/logo-casaturquesa-white-400X300.png" class="logo-home" alt="">
+				</a>
+			</div>
+		</div>
+	</section>
+	<section class="menu-ppal">
+		<header class="header">
+			<nav class="nav">
+				<button class="nav-toggle">
+					<i class="fa-solid fa-bars"></i>
+					<i class="fa-solid fa-times"></i>
+				</button>
+				<ul class="nav-menu">
+					<li class="nav-menu-item"><a href="acercade.html" class="nav-menu-link nav-link">Acerca de</a></li>
+					<li class="nav-menu-item"><a href="productos.html" class="nav-menu-link nav-link">Productos</a></li>
+					<li class="nav-menu-item"><a href="aceitedeoliva.html" class="nav-menu-link nav-link">Aceite de oliva</a></li>
+					<li class="nav-menu-item"><a href="saldemaras.html" class="nav-menu-link nav-link">Sal rosada de maras</a></li>
+					<li class="nav-menu-item"><a href="contacto.html" class="nav-menu-link nav-link">Contacto</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="menu-overlay"></div>
+	</section>
+	<section class="redes">
+		<div class="social-icons">
+			<a href="#"><img src="icons/icon_facebook-w.svg" alt="Facebook"></a>
+			<a href="#"><img src="icons/icon_twitter-w.svg" alt="Twitter"></a>
+			<a href="#"><img src="icons/icon_instagram-w.svg" alt="Instagram"></a>
+			<a href="#"><img src="icons/icon_whatsapp-w.svg" alt="Whatsapp"></a>
+			<a href="#"><img src="icons/icon_email-w.svg" alt="Email"></a>
+		</div>
+	</section>
+	<section class="pie-de-pag">
+		<footer style="background-color:#0000009c;background-blend-mode:multiply;color:#fff;text-align:center;padding:10px;font-family:'Nunito',sans-serif;font-size:10px">
+			<p>Copyright &copy; 2023 Casa Turquesa | Todos los derechos reservados</p>
+		</footer>
+	</section>
+	<script>
+		const navToggle=document.querySelector(".nav-toggle");
+		const navMenu=document.querySelector(".nav-menu");
+		const menuOverlay=document.querySelector(".menu-overlay");
+		
+		function toggleMenu(){
+			navToggle.classList.toggle("active");
+			navMenu.classList.toggle("active");
+			menuOverlay.classList.toggle("active");
+			document.body.style.overflow=navMenu.classList.contains("active")?"hidden":"";
+		}
+		
+		navToggle.addEventListener("click",toggleMenu);
+		menuOverlay.addEventListener("click",toggleMenu);
+		
+		document.querySelectorAll(".nav-menu-link").forEach(link=>{
+			link.addEventListener("click",()=>{
+				if(window.innerWidth<=768&&navMenu.classList.contains("active")){
+					toggleMenu();
+				}
+			});
+		});
+	</script>
+</body>
+</html>

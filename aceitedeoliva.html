@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Casa Turquesa | Aceite de oliva</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
+	<script src="https://kit.fontawesome.com/1958077107.js" crossorigin="anonymous"></script>
+	<style>
+		*{margin:0;box-sizing:border-box}
+		body{font-family:'Nunito',sans-serif;margin:0;background-image:url('images/background_2.jpg');background-size:cover;background-attachment:fixed;display:flex;flex-direction:column;min-height:100vh}
+		@media(max-width:768px){body{background-image:url('images/background_16_9.jpg')}}
+		h1,h2,h3{font-family:'Cinzel',serif;color:#000}
+		h4{font-family:'Cinzel',serif;color:#000;font-weight:400}
+		.titulo-principal{text-align:center}
+		.titulo-principal::after{content:' ';display:block;width:5em;margin:10px auto 0;border-bottom:solid 0.15em #399fb6;border-radius:86px}
+		.contenido-1{font-family:'Nunito',sans-serif;font-size:16px;color:#7a7a7a;padding:20px 0}
+		.texto-parrafos{text-align:justify;line-height:20px;font-weight:300}
+		.foto-categoria{width:100%;padding:15px 0;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:transform 0.3s ease}
+		.foto-categoria:hover{transform:scale(1.02)}
+		.header-pages{padding:10px 0;position:relative;z-index:1000}
+		.logo-responsive{display:none}
+		.logo-desktop{margin:auto;transition:transform 0.3s}
+		.logo-desktop:hover{transform:scale(1.1)}
+		.logo-home2{width:auto;height:120px;margin-bottom:20px}
+		.nav{display:flex;justify-content:center;align-items:center;width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+		.nav-link{color:#47C6E3;text-decoration:none;font-family:'Cinzel',serif}
+		.nav-menu{display:flex;margin:0;padding:0;list-style:none;gap:8px}
+		ul.nav-menu{margin-bottom:0}
+		.nav-menu-item{font-size:16px;text-transform:uppercase}
+		.nav-menu-link{display:block;padding:8px 16px;border-radius:30px;text-align:center;transition:all 0.3s ease}
+		.nav-menu-link:hover{background:rgba(71,198,227,0.2);color:#47C6E3;transform:translateY(-2px)}
+		
+		.nav-toggle{color:#fff;background:rgba(71,198,227,0.9);border:none;font-size:22px;width:50px;height:50px;border-radius:50%;cursor:pointer;display:none;transition:all 0.3s ease}
+		.nav-toggle:hover{background:rgba(57,159,182,0.9);transform:scale(1.05)}
+		
+		.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:all 0.3s ease;z-index:998}
+		.menu-overlay.active{opacity:1;visibility:visible}
+		
+		.social-icons2{font-size:0;text-align:center;padding:2% 0 10px 0}
+		.social-icons2 img{width:35px;height:35px;margin-right:10px;overflow:hidden;transition:transform 0.3s}
+		.social-icons2 img:hover{transform:scale(1.2)}
+		.footer-pages{margin-top:auto}
+		footer{color:#399FB6;text-align:center;padding:10px;font-family:'Nunito',sans-serif;font-size:10px}
+		#topButton{display:none;position:fixed;bottom:20px;right:30px;z-index:99;font-size:18px;border:none;outline:none;background-color:#399FB6;color:#fff;cursor:pointer;padding:15px;border-radius:50px;box-shadow:0 4px 15px rgba(57,159,182,0.4);transition:all 0.3s ease}
+		#topButton:hover{background-color:#47C6E3;transform:translateY(-3px);box-shadow:0 6px 20px rgba(71,198,227,0.5)}
+		
+		@media(max-width:768px){
+			.header-pages{background:linear-gradient(135deg,rgba(57,159,182,0.95),rgba(71,198,227,0.9));backdrop-filter:blur(10px);padding:15px 0;box-shadow:0 2px 20px rgba(0,0,0,0.1)}
+			.logo-responsive{display:block}
+			.logo-home3{width:auto;height:50px;transition:transform 0.3s}
+			.logo-home3:hover{transform:scale(1.1)}
+			.logo-desktop{display:none}
+			
+			.nav-toggle{display:flex;align-items:center;justify-content:center;position:fixed;top:10px;right:15px}
+			.nav-toggle .fa-times{opacity:0;position:absolute;transition:all 0.3s ease}
+			.nav-toggle.active .fa-bars{opacity:0;transform:rotate(90deg)}
+			.nav-toggle.active .fa-times{opacity:1;transform:rotate(90deg)}
+			
+			.nav-menu{
+				position:fixed;top:0;right:-280px;width:280px;height:100vh;
+				background:linear-gradient(180deg,#1a1a2e 0%,#16213e 100%);
+				flex-direction:column;align-items:center;justify-content:center;gap:10px;
+				transition:all 0.4s cubic-bezier(0.25,0.8,0.25,1);z-index:999;margin:0;padding:0;
+				box-shadow:-10px 0 30px rgba(0,0,0,0.3);overflow-y:auto
+			}
+			.nav-menu.active{right:0}
+			
+			.nav-menu-item{opacity:0;transform:translateX(50px)}
+			.nav-menu.active .nav-menu-item{opacity:1;transform:translateX(0);transition:all 0.4s ease}
+			.nav-menu.active li:nth-child(1){transition-delay:0.1s}
+			.nav-menu.active li:nth-child(2){transition-delay:0.15s}
+			.nav-menu.active li:nth-child(3){transition-delay:0.2s}
+			.nav-menu.active li:nth-child(4){transition-delay:0.25s}
+			.nav-menu.active li:nth-child(5){transition-delay:0.3s}
+			
+			.nav-menu-link{padding:15px 40px;font-size:18px;color:#fff;width:100%}
+			.nav-menu-link:hover{background:rgba(255,255,255,0.1);transform:scale(1.05)}
+			
+			.titulo-principal{text-align:center}
+			.texto-parrafos{padding:0 30px}
+			.contenido-1{padding:10px 0}
+			.foto-categoria{width:90%;margin:0 auto;display:block}
+		}
+	</style>
+</head>
+<body>
+	<section class="header-pages">
+		<header class="header">
+			<nav class="nav">
+				<button class="nav-toggle">
+					<i class="fa-solid fa-bars"></i>
+					<i class="fa-solid fa-times"></i>
+				</button>
+				<div class="logo-responsive">
+					<a href="index.html"><img src="images/logo_casaturquesa-horizontal-w.png" class="logo-home3" alt=""></a>
+				</div>
+				<div class="logo-desktop">
+					<a href="index.html"><img src="images/logo-casaturquesa-400X300px.svg" class="logo-home2" alt=""></a>
+				</div>
+				<ul class="nav-menu">
+					<li class="nav-menu-item"><a href="acercade.html" class="nav-menu-link nav-link">Acerca de</a></li>
+					<li class="nav-menu-item"><a href="productos.html" class="nav-menu-link nav-link">Productos</a></li>
+					<li class="nav-menu-item"><a href="aceitedeoliva.html" class="nav-menu-link nav-link">Aceite de oliva</a></li>
+					<li class="nav-menu-item"><a href="saldemaras.html" class="nav-menu-link nav-link">Sal rosada de maras</a></li>
+					<li class="nav-menu-item"><a href="contacto.html" class="nav-menu-link nav-link">Contacto</a></li>
+				</ul>
+			</nav>
+		</header><br>
+	</section>
+	<div class="menu-overlay"></div>
+	<section class="contenido-1">
+		<div class="container contenedor-parrafos">
+			<h2 class="titulo-principal">Aceite de oliva</h2><br>
+			<p class="texto-parrafos"><h4>¿Que es el Aceite de Oliva Extra Virgen?</h4></p>
+			<img src="images/cat-aceitedeoliva.jpg" class="foto-categoria" alt="">
+			<p class="texto-parrafos">Es el Aceite que proviene de la primera prensa y es la más alta calidad de aceite de oliva con el sabor, aroma y acidez perfectos. Este aceite de oliva es menos procesado que el aceite de oliva comun y es muy delicado en sabor. De hecho, apenas estamos empezando a comprender como el uso de innumerables formas del aceite de oliva puede mejorar nuestra salud y nuestras vidas.</p>
+			<p class="texto-parrafos">Beneficios y usos:</p>
+			<ul style="padding-left:40px;line-height:25px">
+				<li>Mejora la salud intestinal.</li>
+				<li>Previene la artritis.</li>
+				<li>Mejora las funciones cognitivas.</li>
+				<li>Previene la diabetes tipo II.</li>
+				<li>Mejora la salud cutanea.</li>
+				<li>Previene el cancer.</li>
+				<li>Comienza a usar aceite de oliva Extra Virgen para cocinar como reemplazo del aceite vegetal, en cremas, ensaladas y guisos salteados.</li>
+			</ul>
+		</div>
+	</section>
+	<section class="footer-pages">
+		<div class="social-icons2">
+			<a href="#"><img src="icons/icon_facebook.svg" alt="Facebook"></a>
+			<a href="#"><img src="icons/icon_twitter.svg" alt="Twitter"></a>
+			<a href="#"><img src="icons/icon_instagram.svg" alt="Instagram"></a>
+			<a href="#"><img src="icons/icon_whatsapp.svg" alt="Whatsapp"></a>
+			<a href="#"><img src="icons/icon_email.svg" alt="Email"></a>
+		</div>
+		<button onclick="goToTop()" id="topButton" title="Ir al Top"><i class="fa-solid fa-arrow-up"></i></button>
+		<footer><p>Copyright &copy; 2023 Casa Turquesa | Todos los derechos reservados</p></footer>
+	</section>
+	<script>
+		const navToggle=document.querySelector(".nav-toggle");
+		const navMenu=document.querySelector(".nav-menu");
+		const menuOverlay=document.querySelector(".menu-overlay");
+		
+		function toggleMenu(){
+			navToggle.classList.toggle("active");
+			navMenu.classList.toggle("active");
+			menuOverlay.classList.toggle("active");
+			document.body.style.overflow=navMenu.classList.contains("active")?"hidden":"";
+		}
+		
+		navToggle.addEventListener("click",toggleMenu);
+		menuOverlay.addEventListener("click",toggleMenu);
+		
+		document.querySelectorAll(".nav-menu-link").forEach(link=>{
+			link.addEventListener("click",()=>{
+				if(window.innerWidth<=768&&navMenu.classList.contains("active")){toggleMenu()}
+			});
+		});
+		
+		window.onscroll=function(){scrollFunction()};
+		function scrollFunction(){document.getElementById("topButton").style.display=(document.body.scrollTop>20||document.documentElement.scrollTop>20)?"block":"none"}
+		function goToTop(){document.body.scrollTop=0;document.documentElement.scrollTop=0}
+	</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

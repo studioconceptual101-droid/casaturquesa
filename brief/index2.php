@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Turquesa</title>
+
+    <!-- Enlace al favicon en formato PNG -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!--Google fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,400&display=swap" rel="stylesheet">
+
+    <!-- Comandos css fuentes -->
+
+    <!--
+	font-family: 'Cinzel', serif;
+	font-family: 'Nunito', sans-serif;
+    -->
+
+    <!-- Enlace al archivo CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Opcional: Enlace a un tema de Bootstrap (opcional) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css">
+
+    <!-- Opcional: Enlace al archivo CSS personalizado -->
+    <!-- <link rel="stylesheet" href="ruta-a-tu-archivo.css"> -->
+
+    <!--font awesome-->
+	<script src="https://kit.fontawesome.com/1958077107.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<style>
+
+</style>
+
+<body>
+<section class="header"><!--head-->
+	<div class="container header-princial">
+
+		<div class="logo">
+			<a href="index.html">
+				<img src="images/logo-casaturquesa-white-400X300.png" class="logo-home" alt="">
+			</a>
+		</div>
+
+	</div>
+</section>
+<section class="contenido"><!--contenido-->
+
+	<div class="container">
+	</div>
+	
+</section>
+
+<section> <!--menu inicio-->
+
+<div class="container">
+    <!-- Menú de navegación -->
+    <?php include 'menu-nav-1.php';?>
+
+
+    <div class="navbar menu-desktop" id="myNavbar">
+        <a href="acercade.html">Acerca de</a>
+        <a href="#">Productos</a>
+        <a href="#">Aceite de oliva</a>
+        <a href="#">Sal rosada de maras</a>
+        <a href="#">Contacto</a>
+
+    </div>
+</div>
+	
+</section>
+
+<section><!--redes-->
+
+	<!-- Contenido de tu página -->
+	<div class="social-icons">
+		<a href="#"><img src="icons/icon_facebook-w.svg" alt="Facebook"></a>
+		<a href="#"><img src="icons/icon_twitter-w.svg" alt="Twitter"></a>
+		<a href="#"><img src="icons/icon_instagram-w.svg" alt="Instagram"></a>
+		<a href="#"><img src="icons/icon_whatsapp-w.svg" alt="Whatsapp"></a>
+		<a href="#"><img src="icons/icon_email-w.svg" alt="Email"></a>
+	<!-- Agrega más iconos aquí -->
+	</div>
+
+</section>
+
+<style>
+.main-content {
+	flex: 1;
+	padding: 20px;
+}
+
+/* Estilo para el footer */
+	footer {
+		background-color: #0000009c;
+		background-blend-mode: multiply;
+		color: white;
+		text-align: center;
+		padding: 10px;
+		font-family: 'Nunito', sans-serif;
+		font-size: 10px;
+	}
+.seccion-footer {
+    margin-top: auto;
+}
+
+</style>
+
+<section class="seccion-footer"><!--footer-->
+        <footer>
+            <!-- Contenido del footer, como enlaces, información de contacto, etc. -->
+            <p>Copyright &copy; 2023 Casa Turquesa | Todos los derechos reservados</p>
+        </footer>
+</section>
+
+    <!-- Enlace a la biblioteca de JavaScript de Bootstrap (requiere jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Opcional: Agregar tus propios scripts personalizados -->
+    <!-- <script src="ruta-a-tu-script.js"></script> -->
+</body>
+</html>

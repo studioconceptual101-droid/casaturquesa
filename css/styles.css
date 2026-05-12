@@ -1,0 +1,126 @@
+/*hoja de estilos*/
+
+body {
+	background-image: url('images/background_3.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	/*estilos para el parrafo*/
+    padding: 40px 0px 0;
+}
+
+
+.contenido{
+	background-color: #ffffff9e;
+	display: none;
+}
+
+h1, h2, h3{font-family: 'Cinzel', serif;}
+
+.header{
+/*	background-color: #ccc;*/
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+.menu-ppal{
+	margin-top: 15%;
+}
+
+.container.principal{
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+.container.header-princial {
+    padding: 50px 0 50px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.logo-home{
+	width: 300px;
+	height: auto;
+	overflow: hidden;
+	transition: transform 0.3s;
+	margin: auto;
+	display: block;
+}
+
+.logo-home:hover{
+	transform: scale(1.1);
+}
+
+.social-icons {
+	font-size: 0; /* Para eliminar el espacio entre elementos inline-block */
+	text-align: center;
+	padding: 5% 0 10px 0;
+}
+
+.social-icons img {
+	width: 35px; /* Ajusta el tamaño de los iconos según sea necesario */
+	height: 35px;
+	margin-right: 10px; /* Espacio entre los iconos */
+	overflow: hidden;
+	transition: transform 0.3s;
+}
+
+.social-icons img:hover{
+	transform: scale(1.2);	
+}
+
+.navbar.menu-desktop {
+/*	background-color: #333;*/
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	font-family: 'Cinzel', serif;
+	padding: 0px;
+}
+
+.navbar.menu-desktop a {
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.navbar.menu-desktop a:hover {
+/*	background-color: #ddd;*/
+	background-color: #0000008c;
+	color: #FFF;
+	transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+/* Estilos para la versión responsive */
+@media screen and (max-width: 600px) {
+	.navbar {
+		flex-direction: column;
+		align-items: center;
+	}
+
+            .navbar a:not(:first-child) {display: none;}
+            .navbar a.icon {display: block;position: absolute;top: 0;right: 0;}
+            .navbar.responsive a.icon {position: relative;}
+            .navbar.responsive a {float: none; display: block; text-align: left;}
+}
+
+/* Estilos para el modo responsive */
+@media screen and (max-width: 768px) {
+    .navbar a:not(:first-child) {
+        display: none;
+    }
+}
+
+@media screen (max-width: 769px){
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
