@@ -20,7 +20,7 @@
 		.titulo-principal{text-align:center}
 		.titulo-principal::after{content:' ';display:block;width:5em;margin:10px auto 30px;border-bottom:solid 0.15em #399fb6;border-radius:86px}
 		.contenido-1{font-family:'Nunito',sans-serif;font-size:16px;color:#7a7a7a;padding:30px 0}
-		.header-pages{padding:10px 0;position:relative;z-index:1000}
+		.header-pages{padding:15px 0;position:relative;z-index:1000}
 		.logo-responsive{display:none}
 		.logo-desktop{margin:auto;transition:transform 0.3s}
 		.logo-desktop:hover{transform:scale(1.1)}
@@ -32,8 +32,8 @@
 		.nav-menu-item{font-size:16px;text-transform:uppercase}
 		.nav-menu-link{display:block;padding:8px 16px;border-radius:30px;text-align:center;transition:all 0.3s ease}
 		.nav-menu-link:hover{background:rgba(71,198,227,0.2);color:#47C6E3;transform:translateY(-2px)}
-		.nav-toggle{color:#fff;background:rgba(71,198,227,0.9);border:none;font-size:22px;width:50px;height:50px;border-radius:50%;cursor:pointer;display:none;transition:all 0.3s ease}
-		.nav-toggle:hover{background:rgba(57,159,182,0.9);transform:scale(1.05)}
+		.nav-toggle{color:#fff;background:linear-gradient(135deg,#399fb6,#47C6E3);border:none;font-size:20px;width:48px;height:48px;border-radius:50%;cursor:pointer;display:none;transition:all 0.3s ease;box-shadow:0 3px 10px rgba(57,159,182,0.3)}
+		.nav-toggle:hover{transform:scale(1.05);box-shadow:0 5px 15px rgba(57,159,182,0.4)}
 		.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0;visibility:hidden;transition:all 0.3s ease;z-index:998}
 		.menu-overlay.active{opacity:1;visibility:visible}
 		.social-icons2{font-size:0;text-align:center;padding:2% 0 10px 0}
@@ -69,8 +69,8 @@
 		.btn-cta:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(71,198,227,0.4)}
 		
 		@media(max-width:768px){
-			.header-pages{background:linear-gradient(135deg,rgba(57,159,182,0.95),rgba(71,198,227,0.9));backdrop-filter:blur(10px);padding:15px 0;box-shadow:0 2px 20px rgba(0,0,0,0.1)}
-			.logo-responsive{display:block}
+			.header-pages{background:transparent}
+			.logo-responsive{display:none}
 			.logo-home3{width:auto;height:50px;transition:transform 0.3s}
 			.logo-home3:hover{transform:scale(1.1)}
 			.logo-desktop{display:none}
@@ -104,7 +104,6 @@
 		<header class="header">
 			<nav class="nav">
 				<button class="nav-toggle"><i class="fa-solid fa-bars"></i><i class="fa-solid fa-times"></i></button>
-				<div class="logo-responsive"><a href="index.html"><img src="images/logo_casaturquesa-horizontal-w.png" class="logo-home3" alt=""></a></div>
 				<div class="logo-desktop"><a href="index.html"><img src="images/logo-casaturquesa-400X300px.svg" class="logo-home2" alt=""></a></div>
 				<ul class="nav-menu">
 					<li class="nav-menu-item"><a href="acercade.html" class="nav-menu-link nav-link">Acerca de</a></li>
